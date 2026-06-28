@@ -1,0 +1,521 @@
+.ala-view {
+  --ala-border: var(--background-modifier-border);
+  --ala-muted: var(--text-muted);
+  --ala-panel: var(--background-secondary);
+  --ala-accent: var(--interactive-accent);
+  --ala-accent-hover: var(--interactive-accent-hover);
+  height: 100%;
+  overflow: auto;
+}
+
+.ala-shell {
+  max-width: 760px;
+  padding: 28px;
+}
+
+.ala-header {
+  margin-bottom: 24px;
+}
+
+.ala-kicker {
+  color: var(--text-accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.ala-header h2 {
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+
+.ala-header p {
+  color: var(--ala-muted);
+  line-height: 1.55;
+  margin: 0;
+  max-width: 620px;
+}
+
+.ala-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ala-card {
+  background: var(--background-primary);
+  border: 1px solid var(--ala-border);
+  border-radius: 8px;
+  margin-bottom: 14px;
+  padding: 16px;
+}
+
+.ala-card h3 {
+  font-size: 14px;
+  line-height: 1.3;
+  margin: 0 0 12px;
+}
+
+.ala-summary-grid {
+  color: var(--ala-muted);
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+.ala-empty {
+  color: var(--ala-muted);
+  font-size: 13px;
+  margin: 8px 0 0;
+}
+
+.ala-url-preview {
+  background: var(--ala-panel);
+  border: 1px solid var(--ala-border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 12px;
+  margin: 10px 0 0;
+  max-height: 128px;
+  overflow: auto;
+  padding: 10px;
+  white-space: pre-wrap;
+}
+
+.ala-section {
+  border-top: 1px solid var(--ala-border);
+  padding-top: 16px;
+}
+
+.ala-section:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.ala-section h3 {
+  font-size: 14px;
+  line-height: 1.3;
+  margin: 0 0 12px;
+}
+
+.ala-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ala-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 12px;
+}
+
+.ala-field:first-child {
+  margin-top: 0;
+}
+
+.ala-field label {
+  color: var(--text-normal);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ala-field textarea,
+.ala-field input[type="text"],
+.ala-field input[type="number"],
+.ala-field input[type="password"] {
+  background: var(--background-primary);
+  border: 1px solid var(--ala-border);
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: var(--text-normal);
+  font: inherit;
+  outline: none;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+.ala-field select {
+  background: var(--background-primary);
+  border: 1px solid var(--ala-border);
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: var(--text-normal);
+  font: inherit;
+  height: 40px;
+  line-height: 40px;
+  min-width: 0;
+  outline: none;
+  padding: 0 32px 0 10px;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.ala-inline-fields {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: minmax(130px, 0.8fr) minmax(180px, 1.2fr);
+  margin-top: 12px;
+}
+
+.ala-inline-fields .ala-field {
+  margin-top: 0;
+}
+
+.ala-directory-row {
+  align-items: end;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin-bottom: 12px;
+}
+
+.ala-directory-row .ala-field {
+  margin-top: 0;
+}
+
+.ala-directory-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.ala-path-select {
+  background: var(--background-primary);
+  border: 1px solid var(--ala-border);
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: var(--text-normal);
+  font: inherit;
+  height: 40px;
+  overflow: hidden;
+  padding: 0 12px;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.ala-tree-picker {
+  border: 1px solid var(--ala-border);
+  border-radius: 6px;
+  margin-top: 12px;
+  max-height: 320px;
+  overflow: auto;
+  padding: 6px;
+}
+
+.ala-tree-empty {
+  color: var(--ala-muted);
+  font-size: 13px;
+  padding: 12px;
+}
+
+.ala-tree-item {
+  align-items: center;
+  border-radius: 6px;
+  cursor: pointer;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 18px minmax(140px, 180px) minmax(180px, 1fr);
+  padding: 7px 8px 7px calc(8px + var(--tree-depth, 0) * 18px);
+}
+
+.ala-tree-item:hover,
+.ala-tree-item.is-active {
+  background: var(--background-modifier-hover);
+}
+
+.ala-tree-folder {
+  color: var(--ala-muted);
+  text-align: center;
+}
+
+.ala-tree-name {
+  font-weight: 600;
+  min-width: 0;
+}
+
+.ala-tree-path {
+  color: var(--ala-muted);
+  font-size: 12px;
+  justify-self: stretch;
+  min-width: 0;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ala-modal-input {
+  width: 100%;
+}
+
+.ala-modal-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.ala-compact-fields {
+  align-items: end;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(76px, 1fr));
+  margin-top: 12px;
+}
+
+.ala-compact-fields .ala-field {
+  margin-top: 0;
+}
+
+.ala-limit-field input,
+.ala-range-field input {
+  height: 40px;
+  min-width: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.ala-check-field {
+  min-width: 0;
+}
+
+.ala-inline-check {
+  align-items: center;
+  background: var(--ala-panel);
+  border: 1px solid var(--ala-border);
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+  gap: 8px;
+  height: 40px;
+  padding: 0 10px;
+}
+
+.ala-inline-check span {
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.ala-field textarea {
+  min-height: 40px;
+  resize: vertical;
+}
+
+.ala-url-input {
+  height: 86px;
+  line-height: 1.4;
+  overflow-y: auto;
+}
+
+.ala-prompt-input {
+  line-height: 1.45;
+  min-height: 96px;
+}
+
+.ala-system-prompt-input {
+  min-height: 108px;
+  width: 100%;
+}
+
+.ala-system-prompt-setting {
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.ala-system-prompt-setting .setting-item-info,
+.ala-system-prompt-setting .setting-item-control {
+  width: 100%;
+}
+
+.ala-system-prompt-setting .setting-item-control textarea {
+  box-sizing: border-box;
+  max-width: none;
+  width: 100%;
+}
+
+.ala-url-input:focus {
+  min-height: 72px;
+}
+
+.ala-field textarea:focus,
+.ala-field input[type="text"]:focus,
+.ala-field input[type="number"]:focus,
+.ala-field input[type="password"]:focus,
+.ala-field select:focus {
+  border-color: var(--text-accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--text-accent) 18%, transparent);
+}
+
+.ala-meta-row {
+  color: var(--ala-muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12px;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.ala-toggles {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ala-check {
+  align-items: center;
+  background: var(--ala-panel);
+  border: 1px solid var(--ala-border);
+  border-radius: 6px;
+  display: flex;
+  gap: 8px;
+  min-height: 42px;
+  padding: 8px 10px;
+}
+
+.ala-check span {
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.ala-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.ala-button {
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  min-height: 36px;
+  padding: 0 14px;
+}
+
+.ala-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.ala-button-primary {
+  background: var(--ala-accent);
+  color: var(--text-on-accent);
+}
+
+.ala-button-primary:hover {
+  background: var(--ala-accent-hover);
+}
+
+.ala-button-secondary {
+  background: var(--interactive-normal);
+  color: var(--text-normal);
+}
+
+.ala-button-danger {
+  background: var(--background-modifier-error);
+  color: var(--text-on-accent);
+}
+
+.ala-button-danger:hover {
+  background: var(--background-modifier-error-hover, var(--background-modifier-error));
+}
+
+.ala-status {
+  background: var(--ala-panel);
+  border: 1px solid var(--ala-border);
+  border-radius: 6px;
+  margin-top: 22px;
+  padding: 14px;
+}
+
+.ala-status-title {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.ala-status-body {
+  color: var(--ala-muted);
+  line-height: 1.5;
+}
+
+.ala-summary {
+  color: var(--ala-muted);
+  display: grid;
+  gap: 6px;
+  line-height: 1.45;
+}
+
+.ala-status pre {
+  margin: 8px 0 0;
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.ala-log {
+  max-height: 360px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.ala-copyable-log {
+  background: var(--background-primary);
+  border: 1px solid var(--ala-border);
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: var(--text-normal);
+  font-family: var(--font-monospace);
+  min-height: 120px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 10px;
+  resize: vertical;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  width: 100%;
+}
+
+.ala-settings-block {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  margin: 12px 0;
+  padding: 12px;
+}
+
+.ala-settings-block h4 {
+  font-size: 14px;
+  margin: 0 0 8px;
+}
+
+@media (max-width: 720px) {
+  .ala-shell {
+    padding: 18px;
+  }
+
+  .ala-grid,
+  .ala-toggles,
+  .ala-summary-grid,
+  .ala-inline-fields,
+  .ala-directory-row,
+  .ala-compact-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .ala-actions {
+    justify-content: stretch;
+  }
+
+  .ala-button {
+    flex: 1;
+  }
+}

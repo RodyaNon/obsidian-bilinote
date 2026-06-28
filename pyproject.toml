@@ -1,0 +1,42 @@
+[project]
+name = "ai-learning-assistant-textbook"
+version = "0.2.0"
+description = "Obsidian plugin that turns Bilibili videos into structured learning notes."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "faster-whisper>=0.10.0",
+    "intel-openmp",
+    "modelscope>=1.11.0",
+    "requests>=2.31.0",
+    "yt-dlp>=2023.12.30",
+]
+
+[project.optional-dependencies]
+gpu = [
+    "torch==2.4.1",
+    "torchvision==0.19.1",
+    "torchaudio==2.4.1",
+    "ctranslate2>=4.6.2",
+    "onnxruntime-gpu",
+]
+
+[[tool.uv.index]]
+name = "tencent"
+url = "https://mirrors.cloud.tencent.com/pypi/simple/"
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cu124", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+torchvision = [
+  { index = "pytorch-cu124", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+torchaudio = [
+  { index = "pytorch-cu124", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]

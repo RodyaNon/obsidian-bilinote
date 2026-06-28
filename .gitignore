@@ -1,0 +1,35 @@
+# Python / tooling
+.venv/
+.uv-cache/
+.tmp/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Obsidian local plugin state and secrets
+data.json
+cookies.txt
+cookies.*.txt
+config/*.json
+!config/*.example.json
+
+# Runtime output and downloaded/generated assets
+subtitles/
+models/
+tools/ffmpeg/
+*.log
+
+# Build artifacts
+build/
+dist/
+release/
+*.spec
+
+# Local agent/editor metadata
+.agents/
+.codex/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db

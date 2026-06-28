@@ -1,0 +1,11 @@
+{
+  "models": [
+    {
+      "id": "default",
+      "name": "默认模型",
+      "model_name": "your-model-name",
+      "api_base": "https://your-api-base/v1",
+      "api_key": "your-api-key"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "ai-learning-assistant",
+  "name": "AI 学习助手",
+  "version": "0.2.0",
+  "minAppVersion": "1.5.0",
+  "description": "通过本地 Python 流水线，将 Bilibili 视频生成 Obsidian 学习笔记。",
+  "author": "Local",
+  "authorUrl": "",
+  "isDesktopOnly": true
+}

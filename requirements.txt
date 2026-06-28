@@ -1,0 +1,5 @@
+requests>=2.31.0
+yt-dlp>=2023.12.30
+faster-whisper>=0.10.0
+modelscope>=1.11.0
+intel-openmp
