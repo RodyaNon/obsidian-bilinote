@@ -28,7 +28,7 @@ def _write_cookie_file(sessdata: Optional[str], bili_jct: Optional[str], buvid3:
     if not any(pairs.values()):
         return None
 
-    fd, path = tempfile.mkstemp(prefix="ai-learning-bili-", suffix=".txt")
+    fd, path = tempfile.mkstemp(prefix="bilinote-cookie-", suffix=".txt")
     os.close(fd)
     with open(path, "w", encoding="utf-8") as f:
         for key, value in pairs.items():

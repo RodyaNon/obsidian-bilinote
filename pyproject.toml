@@ -1,7 +1,7 @@
 [project]
-name = "ai-learning-assistant-textbook"
+name = "obsidian-bilinote"
 version = "0.2.0"
-description = "Obsidian plugin that turns Bilibili videos into structured learning notes."
+description = "Obsidian plugin that turns Bilibili subtitles and videos into structured notes."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

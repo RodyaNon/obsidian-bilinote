@@ -4,7 +4,7 @@ const fs = require("fs");
 const https = require("https");
 const path = require("path");
 
-const VIEW_TYPE = "ai-learning-assistant-view";
+const VIEW_TYPE = "bilinote-view";
 
 const DEFAULT_SETTINGS = {
   projectPath: "",
@@ -376,7 +376,7 @@ class AssistantView extends ItemView {
   }
 
   getDisplayText() {
-    return "AI 学习助手";
+    return "Bili Note";
   }
 
   getIcon() {
@@ -739,13 +739,13 @@ module.exports = class AILearningAssistantPlugin extends Plugin {
     this.registerView(VIEW_TYPE, (leaf) => new AssistantView(leaf, this));
     this.currentChild = null;
 
-    this.addRibbonIcon("graduation-cap", "AI 学习助手", () => {
+    this.addRibbonIcon("file-text", "Bili Note", () => {
       this.activateView();
     });
 
     this.addCommand({
-      id: "open-ai-learning-assistant",
-      name: "打开 AI 学习助手",
+      id: "open-bilinote",
+      name: "打开 Bili Note",
       callback: () => this.activateView()
     });
 
@@ -1797,7 +1797,7 @@ class AssistantSettingTab extends PluginSettingTab {
   display() {
     const { containerEl } = this;
     containerEl.empty();
-    containerEl.createEl("h2", { text: "AI 学习助手" });
+    containerEl.createEl("h2", { text: "Bili Note" });
 
     this.displayRuntime(containerEl);
     this.displayPrompt(containerEl);
