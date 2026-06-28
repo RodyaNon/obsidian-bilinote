@@ -1,6 +1,8 @@
-# AI 学习助手 Obsidian 插件
+# Bili Note
 
-AI 学习助手原本是 Web 形态的学习笔记生成工具，现在已经调整为 **Obsidian 插件 + 本地 Python 流水线** 的结构。核心目标不变：把 Bilibili 视频、分 P 视频、合集或收藏夹整理成结构化 Markdown 学习笔记。
+将原 web 框架 更改为 obsidian插件。
+
+Bili Note 是一个 Obsidian 插件，用本地 Python 流水线把 Bilibili 视频、分 P 视频、合集或收藏夹整理成结构化 Markdown 学习笔记。
 
 插件负责交互、配置和笔记落库；Python 流水线负责获取视频信息、下载或复用字幕、在需要时进行本地 ASR 转写，并调用兼容 OpenAI Chat Completions 的模型生成学习笔记。
 
@@ -55,7 +57,7 @@ AI 学习助手原本是 Web 形态的学习笔记生成工具，现在已经调
 将项目放到 Obsidian 仓库的插件目录：
 
 ```text
-<Vault>/.obsidian/plugins/ai-learning-assistant-textbook/
+<Vault>/.obsidian/plugins/obsidian-bilinote/
 ```
 
 然后在项目目录安装 Python 依赖：
@@ -77,7 +79,7 @@ uv pip install -r requirements.txt --python .venv\Scripts\python.exe
 tools/ffmpeg/bin/ffmpeg.exe
 ```
 
-最后在 Obsidian 中打开设置，进入第三方插件，允许第三方插件并启用 `AI 学习助手`。
+最后在 Obsidian 中打开设置，进入第三方插件，允许第三方插件并启用 `Bili Note`。
 
 ## 模型配置
 
