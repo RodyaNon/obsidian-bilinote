@@ -181,30 +181,24 @@ def process_video_task(
                 with open(plain_text_file, "w", encoding="utf-8") as file:
                     file.write(plain_text)
 
-            if is_valid_content(markdown_file):
-                _set_task(
-                    task_id,
-                    message=f"处理字幕 {file_index}/{total_files}: {subtitle_title}: Markdown 已存在，跳过",
-                )
-            else:
-                _set_task(
-                    task_id,
-                    status=TaskStatus.SUMMARIZING,
-                    message=f"正在处理字幕 {file_index}/{total_files}: {subtitle_title}: 生成 Markdown 文档...",
-                    subtitle_file=subtitle_file,
-                )
-                markdown_content = summarizer.generate_markdown_note(
-                    plain_text,
-                    video_title=video_title,
-                    include_summary=generate_options.get("summary", True),
-                    include_content=generate_options.get("full_content", True),
-                    include_exercises=generate_options.get("exercises", False),
-                    include_questions=generate_options.get("questions", False),
-                    prompt_config=prompt_config,
-                    stream=False,
-                )
-                with open(markdown_file, "w", encoding="utf-8") as file:
-                    file.write(markdown_content)
+            _set_task(
+                task_id,
+                status=TaskStatus.SUMMARIZING,
+                message=f"正在处理字幕 {file_index}/{total_files}: {subtitle_title}: 重新生成 Markdown 文档...",
+                subtitle_file=subtitle_file,
+            )
+            markdown_content = summarizer.generate_markdown_note(
+                plain_text,
+                video_title=video_title,
+                include_summary=generate_options.get("summary", True),
+                include_content=generate_options.get("full_content", True),
+                include_exercises=generate_options.get("exercises", False),
+                include_questions=generate_options.get("questions", False),
+                prompt_config=prompt_config,
+                stream=False,
+            )
+            with open(markdown_file, "w", encoding="utf-8") as file:
+                file.write(markdown_content)
 
             all_generated_files.append({
                 "subtitle_title": subtitle_title,
